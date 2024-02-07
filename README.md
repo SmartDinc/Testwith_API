@@ -55,7 +55,7 @@ tw.loadTestwith().then(() => {
 
 ## Contact
 
-- Name : Hwanjin Kim
+- CEO : Hwanjin Kim
 - Tel : 070-7728-0327
 - Email : maxkim@sdcor.net
 - WebSite :  https://www.testwith.io
