@@ -1,8 +1,8 @@
 # Token
 ## ※ Info
-- 사용자는 API Key를 이용하여 서비스에 접속하며, 요청 횟수에 제한이 있으므로 주의해야 합니다.
-- API Key를 사용하여 서비스에 접근할 수 있고, 이를 통해 사용자 식별이 가능합니다.
-- 테스트위드 서버는 초당 1회의 API 요청만을 허용하며, 초당 여러 번의 요청은 제한됩니다.
+- Users access the service using an API Key, and there is a limit on the number of requests, so caution is advised.
+- You can access the service using an API Key, which enables user identification.
+- The TestWith server allows only one API request per second, and multiple requests within a second are restricted.
  
  ```python
 def get_token():
@@ -30,11 +30,11 @@ https://www.testwith.co.kr/services/token
 
 ### API Header
 
-|항목|Mandatory|Description|
+|Item|Mandatory|Description|
 |:--------|:-----|:------------|
-|`Content-Type`|`Mandatory`|`요청 Body Content Type을 application/json으로 지정(POST)` |
+|`Content-Type`|`Mandatory`|`Specify the request Body Content Type as application/json (POST)` |
 
-### 요청 Body
+### Request Body
 ```JSON
 {
     "apiKey": "string",
@@ -42,13 +42,13 @@ https://www.testwith.co.kr/services/token
     "serviceId": "string"
 }
 ```
-|항목|타입|설명|비고|
+|Item|Type|Description|Remarks|
 |:--------|:-----|:------------|:-----|
-|`apiKey`|`string`|`API 키`|`테스트위드 가입 시 발급`|
-|`apiSceret`|`string`|`시크릿 키`|`테스트위드 가입 시 발급`|
-|`serviceId`|`string`|`서비스 아이디`|`테스트위드 가입 시 발급`|
+|`apiKey`|`string`|`api Key`|`Issued upon TestWith registration`|
+|`apiSceret`|`string`|`Secret Key`|`Issued upon TestWith registration`|
+|`serviceId`|`string`|`service Id`|`Issued upon TestWith registration`|
 
-### 응답 Body
+### Response Body
 ```JSON
 {
     "access": "string",
@@ -59,10 +59,10 @@ https://www.testwith.co.kr/services/token
 }
 ```
 
-|항목|타입|설명|비고|
+|Item|Type|Description|Remarks|
 |:--------|:-----|:------------|:-----|
-|`access`|`string`|`토큰`||
-|`exp`|`int`|`토큰 만료 시간`|`timestamp`|
-|`now`|`int`|`토큰 발급 시간(현재 시간)`|`timestamp`|
-|`resultCode`|`int`|`결과 코드`||
-|`resultMsg`|`string`|`결과 내용`||
+|`access`|`string`|`Token`||
+|`exp`|`int`|`Token expiration time`|`timestamp`|
+|`now`|`int`|`Token issuance time (current time)`|`timestamp`|
+|`resultCode`|`int`|`Result code`||
+|`resultMsg`|`string`|`Result content`||

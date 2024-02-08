@@ -1,57 +1,68 @@
 # Testwith_API
  
-`Testwith_API`는 AI감독, 스트리밍(카메라,화면 공유), 시험장생성, 응시자/감독관 관리, 채팅 서비스까지 Testwith의 다양한 기능을 자사서비스에 API연동으로 보다 쉽게 사용할 수 있습니다. 이 가이드는 `Testwith_API`를 빠르게 시작하고 사용하는 방법을 단계별로 안내합니다.
+`Testwith_API` allows for the integration of AI proctoring, streaming (camera, screen sharing), exam venue creation, examinee/proctor management, and chat services into your own service, making it easier to utilize Testwith's diverse features through API integration. This guide provides step-by-step instructions on how to quickly get started and use `Testwith_API`.
 
-※ 자세한 API 가이드는 [테스트위드 API 가이드](https://testwith.co.kr/twguide/kr)에서 확인할 수 있습니다.
+※ Detailed API guidance can be found at the [Testwith API Guide](https://testwith.co.kr/twguide/kr).
 
 ## Important
 
-API 사용에 있어서 중요한 사항들을 아래에 명시합니다:
+Important considerations for using the API are specified below:
 
-- API를 사용하기 위해 필요한 인증 정보(키, [토큰](/Token/TokenREADME.md) 등)가 제대로 설정되었는지 확인하세요. 인증 정보는 [영업](#Contact)팀에 문의 후 발급 받을 수 있습니다.
-- 시험장 고유번호 및 응시자 고유번호는 시험장 생성 및 응시자 등록 후에 조회할 수 있습니다.
-- API 호출 시 필요한 권한과 인증 절차를 준수하세요.
+- Ensure that the necessary authentication information(keys, [tokens](/Token/TokenREADME.md), etc)required for using the API is properly configured. Authentication information can be obtained after contacting the [Sales](#Contact) team.
+- The unique exam venue ID and examinee ID can be queried after creating the exam venue and registering the examinee.
+- Please adhere to the necessary permissions and authentication procedures when making API calls.
 
-이러한 지침을 준수함으로써, `Testwith_API`의 기능들을 원활하게 사용할 수 있습니다.
+By following these guidelines, you can smoothly utilize the features of `Testwith_API`.
 
-## 로드 및 초기화
-### 1. 라이브러리 로드
-`Testwith_API`를 사용하기 전에, API 호출을 위한 초기 설정을 완료해야 합니다. 이를 위해, Testwith 서비스에 접근하고 해당 서비스의 기능을 로드할 수 있습니다.
+## Load and Initialize
+### 1. Load Library
+Before using `Testwith_API`, you must complete the initial setup for API calls. To do this, you can access the Testwith service and load the features of the service.
 
-HTML 페이지에 다음 스크립트 태그를 추가하세요:
+Add the following script tag to your HTML page:
 ```html
 <script src="https://www.testwith.co.kr/static/js/testwith_api.js"></script>
 ```
 
-### 2. Testwith 객체 생성 및 초기화
-JavaScript에서 Testwith 객체를 생성하고 서비스 ID를 인자로 전달하여 초기화합니다.
+### 2. Create and Initialize the Testwith Object
+
+In JavaScript, create the Testwith object and initialize it by passing the service ID as an argument.
 
 ```javascript
-const serviceId = "string";   // 테스트위드에서 발급 받은 서비스 아이디
+const serviceId = "string";   // The service ID issued by Testwith
 const tw = new Testwith(serviceId);
 ```
 
-### 3. Testwith 기능 로드
-JavaScript에서 loadTestwith() 메서드를 사용하여 Testwith 서비스의 기능을 로드합니다.
+### 3. Load Testwith Features
+In JavaScript, use the loadTestwith() method to load the features of the Testwith service.
 
 ```javascript
 tw.loadTestwith().then(() => {
-  // 다음 실행할 코드
+  // Code to Execute Next
 }).catch(err => {
-  console.error('자원 로드 중 오류 발생:', err);
+  console.error('Error Occurred While Loading Resources:', err);
 });
 ```
 
 ### ※ Important
-- serviceId 변수에는 실제 서비스의 ID가 있어야 합니다. 올바른 서비스 ID를 사용하여 초기화해야 합니다.
-- Testwith 라이브러리가 로드되었는지 확인하고, 서비스 ID가 올바르게 전달되었는지 확인해야 합니다.
-- API 호출 전에 해당 페이지에 Testwith 라이브러리가 올바르게 로드되었는지 확인하세요.
+- The serviceId variable should contain the actual ID of the service. It must be initialized with the correct service ID.
+- You need to verify that the Testwith library has been loaded and that the service ID has been correctly passed.
+- Before making an API call, ensure that the Testwith library is correctly loaded on the page.
 
-## 요청 파라미터
+### Request Parameters
 
-|항목|타입|설명|비고|
+|Item|Type|Description|Remarks|
 |:--------|:-----|:------------|:--------------------|
-|`serviceId`|`string`|`서비스 아이디` |`테스트위드 기업 ID 사용`|
+|`serviceId`|`string`|`Service ID` |`Use Testwith Corporate ID`|
+
+## Quick Start
+ 
+This guide provides instructions on how to use the Testwith API simply and quickly by following the steps below.
+
+1. [Face Registration](/Quick%20Start/Ouick_start_Face/Face.md)
+2. [Gaze Tracking](/Quick%20Start/Ouick_start_Gaze/Gaze.md)
+3. [Camera Sharing](/Quick%20Start/Ouick_start_Cam/Cam.md)
+4. [Screen Sharing](/Quick%20Start/Ouick_start_Screen/Screen.md)
+5. [Mobile Sharing](/Quick%20Start/Ouick_start_Mobile/Mobile.md)
 
 ## Contact
 

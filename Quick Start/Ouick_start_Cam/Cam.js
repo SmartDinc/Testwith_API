@@ -1,23 +1,3 @@
-# Quick Start
- 
-This guide provides instructions on how to use the Testwith API simply and quickly by following the steps below.
-
-- Preparation for API Calls (Loading and Initializing Testwith)
-- Querying Unique Exam Venue ID and Examinee ID
-- Executing Feature APIs (Camera, Screen, Mobile, etc.)
-
-## Load and Initialize
-### 1. Load Library
-Before using `Testwith_API`, you must complete the initial setup for API calls. To do this, you can access the Testwith service and load the features of the service.
-
-Add the following script tag to your HTML page:
-```html
-<script src="https://www.testwith.co.kr/static/js/testwith_api.js"></script>
-```
-
-### 2. Camera Sharing
-
-```JavaScript
 const serviceId = "YOUR_SERVICE_ID_HERE";
 const tw = new Testwith(serviceId);
 const token = 'YOUR_TOKEN_HERE';
@@ -75,11 +55,3 @@ async function faceAI() {
 }
 
 faceAI();
-```
-
-### ※ Important
-- The unique identifier for the exam room (testId) and the unique identifier for the examinee (userId) will be obtained through querying the lists of exam rooms and examinees, respectively.
-- You can find more detailed usage instructions in [Creating a UI for Webcam Sharing](https://testwith.co.kr/twguide/kr?doc=2-4-1) and [Setting up Face AI Supervision](https://testwith.co.kr/twguide/kr?doc=2-4-9).
-
-
-
